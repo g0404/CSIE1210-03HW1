@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <math.h>
 int main() {
     int ROI[100];
     int i,n,N,b,max,min,avg;
-    float a=1.00,c;
+    float a=1.00,c,d;
     scanf("%d",&n);
     scanf("%d",&N);
     for(i=0;i<n;i++){
@@ -24,17 +25,18 @@ int main() {
 		a=(1+ROI[i]/100.00)*a;
 		printf("%d ",N);
 	}
-	c=(a-1.00)*100;
+	d = 1.0/n;
+	c=pow(a,d)*100;
 	if(c>0){
 		avg=c+0.5;
 	}
-	else{
+	if(c<0){
 		avg=c-0.5;
+	}
+	if(c==0){
+	    avg=-100;
 	}
     printf("\n%d\n",avg);
     printf("%d %d",max,min);
     return 0;
-	
-
-
 }
