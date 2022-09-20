@@ -26,7 +26,7 @@ int main() {
 		printf("%d ",N);
 	}
 	d = 1.0/n;
-	c=pow(a,d)*100;
+	c=(pow(a,d)-1)*100;
 	if(c>0){
 		avg=c+0.5;
 	}
